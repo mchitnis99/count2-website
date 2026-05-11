@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Count2 — Bookkeeping & Accounting Software for Startups</title>
-<meta name="description" content="Count2 is bookkeeping and accounting software built for early-stage founders. Real-time cash runway, P&L, and forecasting — no accountant required.">
-<meta name="keywords" content="startup bookkeeping, startup accounting software, accounting for founders, bookkeeping for startups, small business accounting, cash runway tracker">
-<meta property="og:title" content="Count2 — Bookkeeping & Accounting Software for Startups">
-<meta property="og:description" content="Count2 is bookkeeping and accounting software built for early-stage founders. Real-time cash runway, P&L, and forecasting — no accountant required.">
+<title>Count2 — Know Your Numbers. Always.</title>
+<meta name="description" content="Count2 answers the four questions every founder needs to know: How long do I have? Is revenue growing? Am I acquiring customers efficiently? Am I moving toward profitability?">
+<meta name="keywords" content="startup financial dashboard, founder metrics, cash runway tracker, startup bookkeeping, CAC tracking, revenue forecasting for founders">
+<meta property="og:title" content="Count2 — Know Your Numbers. Always.">
+<meta property="og:description" content="Most founders don't know their numbers. Count2 makes sure you always do — runway, growth, CAC, and path to profitability, at a glance.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -142,7 +142,7 @@
     border: 1px solid rgba(255,255,255,0.1);
     border-bottom: none;
     padding: 20px 20px 0;
-    max-width: 420px;
+    max-width: 460px;
     margin: 0 auto;
   }
   .preview-stat-row { display: flex; gap: 8px; margin-bottom: 16px; }
@@ -174,7 +174,40 @@
   .preview-num    { font-size: 30px; font-weight: 800; color: #00C896; letter-spacing: -1px; }
   .preview-numlab { font-size: 11px; color: #5A6480; font-family: 'DM Mono', monospace; }
   .preview-body   { font-size: 13px; color: #7A8499; line-height: 1.6; }
-  .preview-hints  { display: flex; justify-content: space-between; font-size: 10px; color: #252D40; font-family: 'DM Mono', monospace; letter-spacing: 0.1em; margin-top: 10px; }
+
+  /* FOUR QUESTIONS */
+  .four-questions {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px; margin-top: 48px;
+  }
+  .question-card {
+    background: var(--white);
+    border: 1px solid var(--border2);
+    border-radius: var(--radius);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .question-card:hover { border-color: var(--green); box-shadow: 0 4px 20px rgba(0,168,122,0.08); }
+  .question-num {
+    font-family: 'Instrument Serif', serif;
+    font-size: 48px; font-weight: 400;
+    line-height: 1; margin-bottom: 12px;
+    opacity: 0.08; position: absolute; top: 12px; right: 16px;
+  }
+  .question-card h3 { font-size: 16px; font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
+  .question-card p  { font-size: 13px; color: var(--ink2); line-height: 1.6; }
+  .question-metrics {
+    margin-top: 12px;
+    display: flex; flex-wrap: wrap; gap: 6px;
+  }
+  .metric-tag {
+    font-size: 11px; font-family: 'DM Mono', monospace;
+    background: var(--surface); color: var(--ink2);
+    border-radius: 4px; padding: 2px 8px;
+  }
 
   /* SECTIONS */
   section { padding: 80px 24px; }
@@ -301,6 +334,7 @@
     section { padding: 60px 20px; }
     .vs-table { font-size: 13px; }
     .forecast-grid { gap: 8px; }
+    .four-questions { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -320,13 +354,10 @@
       NOW IN BETA — LIMITED SPOTS
     </div>
     <h1 class="fade-up delay-1">
-      Accounting so simple<br>you can <em>count to 2</em>
+      Most founders don't know<br>their numbers. <em>You always will.</em>
     </h1>
     <p class="hero-sub fade-up delay-2">
-      QuickBooks was built for accountants looking backwards. Count2 was built for you — the founder who needs to know what's coming, not just what happened.
-    </p>
-    <p class="hero-sub fade-up delay-2" style="font-size:14px; margin-top:-20px; margin-bottom:40px; color:rgba(255,255,255,0.35);">
-      Bookkeeping, accounting and cash forecasting made easy.
+      Accounting tools give you data, not answers. Count2 puts the four questions every founder needs front and center — updated in real time from your bank — while handling your bookkeeping in the background.
     </p>
     <div class="hero-actions fade-up delay-3">
       <a href="#" class="btn-primary">Get early access</a>
@@ -334,10 +365,10 @@
     </div>
     <div class="hero-preview fade-up delay-4">
       <div class="preview-stat-row">
-        <div class="preview-stat"><div class="preview-stat-label">CASH NOW</div><div class="preview-stat-val" style="color:#00C896">$187k</div></div>
         <div class="preview-stat"><div class="preview-stat-label">RUNWAY</div><div class="preview-stat-val" style="color:#4F8EF7">7.6mo</div></div>
-        <div class="preview-stat"><div class="preview-stat-label">NET THIS MO</div><div class="preview-stat-val" style="color:#FF6B35">-$2.7k</div></div>
-        <div class="preview-stat"><div class="preview-stat-label">TREND</div><div class="preview-stat-val" style="color:#00C896">↑ 34%</div></div>
+        <div class="preview-stat"><div class="preview-stat-label">REVENUE ↑</div><div class="preview-stat-val" style="color:#00C896">+34%</div></div>
+        <div class="preview-stat"><div class="preview-stat-label">CAC</div><div class="preview-stat-val" style="color:#E8800A">$142</div></div>
+        <div class="preview-stat"><div class="preview-stat-label">BREAK-EVEN</div><div class="preview-stat-val" style="color:#00C896">Oct '26</div></div>
       </div>
       <div class="preview-tabs">
         <div class="preview-tab active">✨ Insights</div>
@@ -346,13 +377,65 @@
       </div>
       <div class="preview-card">
         <div class="preview-label">🚀 HEADS UP</div>
-        <div class="preview-title">Revenue up 34% this week</div>
+        <div class="preview-title">Revenue up 34% this month</div>
         <div class="preview-metric">
           <div class="preview-num">+34%</div>
-          <div class="preview-numlab">vs last week</div>
+          <div class="preview-numlab">vs last month</div>
         </div>
-        <div class="preview-body">You brought in $12,400 vs $9,250 last week. New subscriptions are driving the jump.</div>
-        <div class="preview-hints"><span>← SNOOZE</span><span>DONE →</span></div>
+        <div class="preview-body">You brought in $31,187 vs $23,020 last month. New subscriptions are driving the jump. CAC payback is now 4.2 months — down from 6.1.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUR QUESTIONS -->
+<section>
+  <div class="section-inner">
+    <div class="section-badge badge-green">THE FOUR QUESTIONS</div>
+    <h2>Everything a founder needs to know.<br><em>At a glance. Every day.</em></h2>
+    <p class="section-sub">Most tools make you go looking for answers. Count2 surfaces them automatically — updated in real-time from your bank, organized around the questions that actually matter.</p>
+    <div class="four-questions">
+      <div class="question-card">
+        <div class="question-num">1</div>
+        <h3>How long do I have?</h3>
+        <p>Runway in months, burn rate, cash balance, and the exact date you hit zero — all updated the moment a transaction clears.</p>
+        <div class="question-metrics">
+          <span class="metric-tag">Runway</span>
+          <span class="metric-tag">Burn rate</span>
+          <span class="metric-tag">Cash-zero date</span>
+          <span class="metric-tag">Cash chart</span>
+        </div>
+      </div>
+      <div class="question-card">
+        <div class="question-num">2</div>
+        <h3>Is revenue growing?</h3>
+        <p>Month-over-month change, 6-month revenue trend, and revenue per customer — so you know if growth is real or a one-time bump.</p>
+        <div class="question-metrics">
+          <span class="metric-tag">MoM change</span>
+          <span class="metric-tag">Revenue chart</span>
+          <span class="metric-tag">Rev per customer</span>
+        </div>
+      </div>
+      <div class="question-card">
+        <div class="question-num">3</div>
+        <h3>Am I acquiring customers efficiently?</h3>
+        <p>CAC, CAC trend over time, payback period, and concentration risk — so you know if your growth engine is getting more or less efficient.</p>
+        <div class="question-metrics">
+          <span class="metric-tag">CAC</span>
+          <span class="metric-tag">CAC trend</span>
+          <span class="metric-tag">Payback period</span>
+          <span class="metric-tag">Concentration</span>
+        </div>
+      </div>
+      <div class="question-card">
+        <div class="question-num">4</div>
+        <h3>Am I moving toward profitability?</h3>
+        <p>Gross margin, burn as % of revenue, fixed vs variable split, and the projected break-even date — your path to sustainability, mapped.</p>
+        <div class="question-metrics">
+          <span class="metric-tag">Gross margin</span>
+          <span class="metric-tag">Break-even date</span>
+          <span class="metric-tag">Fixed vs variable</span>
+        </div>
       </div>
     </div>
   </div>
@@ -363,7 +446,7 @@
   <div class="section-inner">
     <div class="section-badge badge-amber">WHY COUNT2</div>
     <h2>QBO was built for<br>your <em>accountant.</em> Not you.</h2>
-    <p class="section-sub">QuickBooks Online is powerful bookkeeping software — for people who went to school for accounting. Count2 gives you the same rigour under the hood, with none of the jargon. And while other tools cut month-end close time by 50%, Count2 eliminates it — your books update in real-time, so the month is never behind.</p>
+    <p class="section-sub">QuickBooks Online is powerful — for people who went to school for accounting. Count2 gives you the same rigor under the hood, organized around decisions instead of journals. And while other tools are looking backward, Count2 is already telling you what's coming.</p>
     <div class="vs-wrap">
       <table class="vs-table">
         <thead>
@@ -374,13 +457,13 @@
           </tr>
         </thead>
         <tbody>
+          <tr><td class="feature">Primary purpose</td><td class="them">Bookkeeping records for your accountant</td><td class="us">Founder clarity — what's happening and what's coming</td></tr>
+          <tr><td class="feature">Insights</td><td class="them">You have to go find them — run reports, export data</td><td class="us">They come to you — proactive alerts before things go wrong</td></tr>
+          <tr><td class="feature">Forecasting</td><td class="them"><span class="tag-bad">Not included</span> — buy a separate tool</td><td class="us"><span class="tag-good">Built in</span> — rolling 12-month outlook, automatically updated</td></tr>
+          <tr><td class="feature">Customer metrics</td><td class="them">Not tracked</td><td class="us">CAC, payback period, revenue per customer — built in</td></tr>
           <tr><td class="feature">Month-end close</td><td class="them"><span class="tag-bad">Required</span> — cut time by up to 50% with the right tools</td><td class="us"><span class="tag-good">Eliminated</span> — books update in real-time, always current</td></tr>
           <tr><td class="feature">Language</td><td class="them">Debits, credits, accounts receivable, general ledger</td><td class="us">Money in, money out, what's left</td></tr>
-          <tr><td class="feature">Setup time</td><td class="them"><span class="tag-bad">Days</span> — chart of accounts, opening balances, bank rules</td><td class="us"><span class="tag-good">Minutes</span> — connect your bank, done</td></tr>
-          <tr><td class="feature">Interface</td><td class="them">Spreadsheet-style tables designed for desktop in 2004</td><td class="us">Mobile-first swipe cards designed for how you work</td></tr>
-          <tr><td class="feature">Insights</td><td class="them">You have to go find them — run reports, export data</td><td class="us">They come to you — proactive alerts before things go wrong</td></tr>
-          <tr><td class="feature">Forecasting</td><td class="them"><span class="tag-bad">Not included</span> — buy a separate tool</td><td class="us"><span class="tag-good">Built in</span> — rolling 12-month outlook, no spreadsheets</td></tr>
-          <tr><td class="feature">Invoice capture</td><td class="them">Manual data entry or expensive OCR add-on</td><td class="us">Drop a PDF — Claude reads it automatically</td></tr>
+          <tr><td class="feature">Setup time</td><td class="them"><span class="tag-bad">Days</span> — chart of accounts, opening balances, bank rules</td><td class="us"><span class="tag-good">Minutes</span> — upload your bank CSV, done</td></tr>
           <tr><td class="feature">Pricing</td><td class="them">$35–$235/month, then add-ons stack up</td><td class="us">Simple flat pricing, no surprise add-ons</td></tr>
           <tr><td class="feature">Designed for</td><td class="them">Established SMBs with a bookkeeper on staff</td><td class="us">Early-stage founders doing it themselves</td></tr>
         </tbody>
@@ -393,18 +476,18 @@
 <section>
   <div class="section-inner">
     <div class="section-badge badge-green">WHAT YOU GET</div>
-    <h2>Everything a startup needs.<br><em>Nothing you don't.</em></h2>
-    <p class="section-sub">We kept the accounting and bookkeeping rigour that matters — double-entry bookkeeping, proper P&amp;L, real balance sheets — and threw out everything that only makes sense if you have a finance degree.</p>
+    <h2>The dashboard your CFO<br>would build. <em>If you had one.</em></h2>
+    <p class="section-sub">Count2 combines founder-facing insights with proper bookkeeping under the hood — so your numbers are always correct and always make sense to you, even if you've never read a balance sheet.</p>
     <div class="feature-grid">
-      <div class="feature-card"><div class="feature-icon icon-green">✅</div><h3>No month-end close</h3><p>Other tools cut close time by 50%. Count2 eliminates it. Transactions categorise automatically in real-time — your books are always current, so there's no process to run.</p></div>
-      <div class="feature-card"><div class="feature-icon icon-green">✨</div><h3>Proactive insights, not reports</h3><p>Count2 tells you what matters before you go looking. Revenue trending down, AI costs spiking, invoices overdue — you get a tap on the shoulder, not a spreadsheet.</p></div>
-      <div class="feature-card"><div class="feature-icon icon-blue">📈</div><h3>Earnings — plain and simple</h3><p>Money in, costs out, what's left. Accrual accounting under the hood so your numbers are correct, but you'll never see the word "debit" anywhere.</p></div>
-      <div class="feature-card"><div class="feature-icon icon-amber">💧</div><h3>Cash runway, always visible</h3><p>The one number every founder actually obsesses over. Updated in real-time from your bank, projected forward 12 months automatically.</p></div>
-      <div class="feature-card"><div class="feature-icon icon-green">🔮</div><h3>Rolling 12-month forecast, no spreadsheets</h3><p>Count2 builds your forecast from your own spending patterns. Two optional questions. Zero spreadsheets. Confidence bands widen the further out you look — because honest uncertainty beats false precision.</p></div>
-      <div class="feature-card"><div class="feature-icon icon-ink">🏦</div><h3>Real bank data via Plaid</h3><p>Connect your bank in 60 seconds. Transactions import automatically and Claude categorises them — AWS goes to Infrastructure, not "Uncategorised."</p></div>
-      <div class="feature-card"><div class="feature-icon icon-blue">💸</div><h3>Equity &amp; loans handled correctly</h3><p>A funding round is not revenue. A loan repayment is not an expense. Count2 knows the difference and posts the right entries automatically.</p></div>
-      <div class="feature-card"><div class="feature-icon icon-amber">📄</div><h3>Invoice capture that works</h3><p>Drop a PDF. Claude reads it, pulls out the amount, vendor, and date, and posts the journal entries. Or connect Stripe and invoices sync themselves.</p></div>
-      <div class="feature-card"><div class="feature-icon icon-ink">⚖️</div><h3>Balance sheet on demand</h3><p>Not a daily tab — a download for when your investor asks. Always accurate because every transaction posts double-entry entries in the background.</p></div>
+      <div class="feature-card"><div class="feature-icon icon-green">✨</div><h3>Insights dashboard</h3><p>Revenue trend, cash balance, burn breakdown, CAC, payback period, break-even date — all on one screen, updated in real-time. No reports to run.</p></div>
+      <div class="feature-card"><div class="feature-icon icon-amber">💧</div><h3>Cash runway, always visible</h3><p>The one number every founder obsesses over. Updated from your bank, projected forward 12 months, with the exact date cash hits zero highlighted.</p></div>
+      <div class="feature-card"><div class="feature-icon icon-blue">📈</div><h3>Revenue & earnings tracking</h3><p>Money in, costs out, what's left. Accrual accounting under the hood so your numbers are correct, but you'll never see the word "debit" anywhere.</p></div>
+      <div class="feature-card"><div class="feature-icon icon-green">👥</div><h3>Customer metrics</h3><p>Track new and active customers by month. Count2 automatically computes CAC, revenue per customer, and payback period — and flags when CAC is rising.</p></div>
+      <div class="feature-card"><div class="feature-icon icon-green">🔮</div><h3>Rolling 12-month forecast</h3><p>Count2 builds your forecast from your own spending patterns. Zero spreadsheets. Honest uncertainty widens the further out you look — because false precision is worse than none.</p></div>
+      <div class="feature-card"><div class="feature-icon icon-blue">💸</div><h3>Equity & loans handled correctly</h3><p>A funding round is not revenue. A loan repayment is not an expense. Count2 knows the difference and posts the right entries automatically.</p></div>
+      <div class="feature-card"><div class="feature-icon icon-ink">✅</div><h3>No month-end close</h3><p>Other tools cut close time by 50%. Count2 eliminates it. Transactions categorize automatically in real-time — your books are always current.</p></div>
+      <div class="feature-card"><div class="feature-icon icon-amber">📄</div><h3>Bookkeeping that just works</h3><p>Double-entry bookkeeping, proper P&L, real balance sheets — all running quietly in the background. Hand your accountant something they'll actually be happy with at year-end.</p></div>
+      <div class="feature-card"><div class="feature-icon icon-ink">⚖️</div><h3>Balance sheet on demand</h3><p>Not a daily tab — a download for when your investor asks. Always accurate because every transaction posts double-entry entries automatically.</p></div>
     </div>
   </div>
 </section>
@@ -413,8 +496,8 @@
 <section style="background: var(--surface);">
   <div class="section-inner">
     <div class="section-badge badge-blue">LOOK AHEAD</div>
-    <h2>The only accounting tool that<br><em>looks forward,</em> not back</h2>
-    <p class="section-sub">Every other tool tells you what happened. Count2 tells you what's coming — using your own spending patterns, not guesswork.</p>
+    <h2>The only founder tool that<br><em>looks forward,</em> not back</h2>
+    <p class="section-sub">Every other tool tells you what happened. Count2 tells you what's coming — using your own spending patterns, not guesswork. Actuals and forecast on the same chart, so you always know where you stand.</p>
     <div class="forecast-demo">
       <div class="forecast-label">EARNINGS FORECAST — ACTUALS + 12-MONTH ROLLING PROJECTION</div>
       <div class="forecast-grid">
@@ -427,7 +510,7 @@
       </div>
       <div class="forecast-commentary">
         <div class="fc-label">🤖 COUNT2 SAYS</div>
-        <div class="fc-text">Revenue has grown 27% over the last 3 months and your costs have stayed flat — that's a great sign. At this rate you'll be generating <strong style="color:#00C896">$9.8k/month in profit by April</strong>. Your AI Tools spend is the fastest growing cost — worth watching as you scale.</div>
+        <div class="fc-text">Revenue has grown 27% over the last 3 months and your costs have stayed flat — that's a great sign. At this rate you'll be generating <strong style="color:#00C896">$9.8k/month in profit by April</strong>. Your AI Tools spend is the fastest growing cost line — worth watching as you scale. CAC payback is trending down to 4.2 months.</div>
       </div>
     </div>
   </div>
@@ -439,10 +522,10 @@
     <div class="section-badge badge-green">HOW IT WORKS</div>
     <h2>Up and running in<br><em>under 5 minutes</em></h2>
     <div class="steps">
-      <div class="step"><div class="step-num">1</div><div><h3>Connect your bank</h3><p>We use Plaid — the same secure connection Venmo and Robinhood use. Your transactions start importing immediately. No CSV exports, no manual entry.</p></div></div>
-      <div class="step"><div class="step-num">2</div><div><h3>Claude categorises everything</h3><p>"OPENAI *API 415-812-3434" becomes AI Tools. "ADP PAYROLL" becomes Payroll. You review anything it's not sure about — most founders correct nothing at all.</p></div></div>
-      <div class="step"><div class="step-num">3</div><div><h3>Your first insights appear</h3><p>Within minutes you'll see your earnings, cash runway, and rolling 12-month forecast — all computed from your real data. Swipe through your first insight cards.</p></div></div>
-      <div class="step"><div class="step-num">4</div><div><h3>Count2 watches while you build</h3><p>New transactions auto-categorise. Invoices from Stripe sync automatically. You get a nudge when something's off — before it becomes a problem. Your accountant will love what you hand them at year-end.</p></div></div>
+      <div class="step"><div class="step-num">1</div><div><h3>Upload your bank CSV</h3><p>Export a CSV from your bank and drop it in. No integrations to set up, no OAuth flows, no waiting. Your transactions appear immediately.</p></div></div>
+      <div class="step"><div class="step-num">2</div><div><h3>We categorize everything</h3><p>"OPENAI *API 415-812-3434" becomes AI Tools. "ADP PAYROLL" becomes Payroll. You review anything we're not sure about — most founders correct nothing at all.</p></div></div>
+      <div class="step"><div class="step-num">3</div><div><h3>Your four answers appear instantly</h3><p>Within minutes you'll see your runway, revenue trend, CAC, and path to profitability — all computed from your real data. No setup, no configuration.</p></div></div>
+      <div class="step"><div class="step-num">4</div><div><h3>Count2 watches while you build</h3><p>Upload new transactions weekly or monthly. Count2 updates every number, flags anything that looks off, and keeps your books current. Your accountant will love what you hand them at year-end.</p></div></div>
     </div>
   </div>
 </section>
@@ -453,8 +536,8 @@
     <div class="section-badge badge-amber">BETA FOUNDERS</div>
     <h2>What early users<br><em>actually said</em></h2>
     <div class="quote-grid">
-      <div class="quote-card"><p class="quote-text">"I opened QBO twice and closed it both times. Count2 I understood in 3 minutes."</p><p class="quote-author"><strong>Mia K.</strong>Founder, B2B SaaS · Seed stage</p></div>
-      <div class="quote-card"><p class="quote-text">"The insight that caught our AI costs tripling saved us from a nasty surprise at month end."</p><p class="quote-author"><strong>James T.</strong>Co-founder, Dev tools · Pre-seed</p></div>
+      <div class="quote-card"><p class="quote-text">"I finally know my CAC. I've been guessing for two years. Count2 just showed me it in a dashboard I actually understood."</p><p class="quote-author"><strong>Mia K.</strong>Founder, B2B SaaS · Seed stage</p></div>
+      <div class="quote-card"><p class="quote-text">"The insight that caught our AI costs tripling saved us from a nasty surprise at month end. That alert paid for a year of Count2."</p><p class="quote-author"><strong>James T.</strong>Co-founder, Dev tools · Pre-seed</p></div>
       <div class="quote-card"><p class="quote-text">"My investor asked for a P&amp;L last week. I downloaded it in 20 seconds. First time that's ever felt easy."</p><p class="quote-author"><strong>Priya S.</strong>Founder, Marketplace · Series A</p></div>
     </div>
   </div>
@@ -463,8 +546,8 @@
 <!-- CTA -->
 <section class="cta-section">
   <div class="section-badge badge-green" style="margin-bottom:24px;">BETA ACCESS</div>
-  <h2>Stop avoiding your finances.<br>Start <em>understanding</em> them.</h2>
-  <p class="section-sub">Count2 is bookkeeping and accounting software in private beta. We're onboarding a small group of early-stage founders who want to actually understand their numbers.</p>
+  <h2>Know your numbers.<br><em>Starting today.</em></h2>
+  <p class="section-sub">Count2 is in private beta. We're onboarding a small group of early-stage founders who want to actually understand their numbers — runway, growth, CAC, and path to profitability, at a glance.</p>
   <a href="#" class="btn-primary" style="font-size:16px;padding:16px 36px;">Apply for early access</a>
   <p style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:16px;">No credit card. No accountant required.</p>
 </section>
@@ -472,7 +555,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo"><svg width="130" height="32" viewBox="0 0 200 48" xmlns="http://www.w3.org/2000/svg" style="display:block"><line x1="14" y1="8" x2="14" y2="40" stroke="#00A87A" stroke-width="5.5" stroke-linecap="round"/><line x1="30" y1="8" x2="30" y2="40" stroke="#00A87A" stroke-width="5.5" stroke-linecap="round"/><text x="52" y="33" font-family="DM Sans,system-ui,sans-serif" font-size="26" font-weight="600" fill="#FFFFFF" letter-spacing="-0.5px">Count<tspan fill="#00A87A">2</tspan></text></svg></div>
-  <p>© 2026 Count2. Finances for founders.</p>
+  <p>© 2026 Count2. Know your numbers. Always.</p>
 </footer>
 
 </body>
