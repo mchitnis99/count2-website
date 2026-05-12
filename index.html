@@ -343,7 +343,7 @@
 <!-- NAV -->
 <nav>
   <a href="#" class="nav-logo"><svg width="130" height="32" viewBox="0 0 200 48" xmlns="http://www.w3.org/2000/svg" style="display:block"><line x1="14" y1="8" x2="14" y2="40" stroke="#00A87A" stroke-width="5.5" stroke-linecap="round"/><line x1="30" y1="8" x2="30" y2="40" stroke="#00A87A" stroke-width="5.5" stroke-linecap="round"/><text x="52" y="33" font-family="DM Sans,system-ui,sans-serif" font-size="26" font-weight="600" fill="#0D1117" letter-spacing="-0.5px">Count<tspan fill="#00A87A">2</tspan></text></svg></a>
-  <a href="#" class="nav-cta">Join the beta</a>
+  <a href="#" class="nav-cta" onclick="openModal(); return false;">Join the beta</a>
 </nav>
 
 <!-- HERO -->
@@ -354,13 +354,13 @@
       NOW IN BETA — LIMITED SPOTS
     </div>
     <h1 class="fade-up delay-1">
-      Most founders don't know<br>their numbers. <em>You always will.</em>
+      Accounting and bookkeeping tools<br>look backwards. <em>You need to look forward.</em>
     </h1>
     <p class="hero-sub fade-up delay-2">
-      Accounting tools give you data, not answers. Count2 puts the four questions every founder needs front and center — updated in real time from your bank — while handling your bookkeeping in the background.
+      Most founders don't know their actual and forecast metrics. You always will. Count2 puts the four questions every founder needs front and center — updated in real time from your bank — while handling your bookkeeping in the background.
     </p>
     <div class="hero-actions fade-up delay-3">
-      <a href="#" class="btn-primary">Get early access</a>
+      <a href="#" class="btn-primary" onclick="openModal(); return false;">Get early access</a>
       <a href="#how" class="btn-ghost">See how it works</a>
     </div>
     <div class="hero-preview fade-up delay-4">
@@ -548,7 +548,7 @@
   <div class="section-badge badge-green" style="margin-bottom:24px;">BETA ACCESS</div>
   <h2>Know your numbers.<br><em>Starting today.</em></h2>
   <p class="section-sub">Count2 is in private beta. We're onboarding a small group of early-stage founders who want to actually understand their numbers — runway, growth, CAC, and path to profitability, at a glance.</p>
-  <a href="#" class="btn-primary" style="font-size:16px;padding:16px 36px;">Apply for early access</a>
+  <a href="#" class="btn-primary" onclick="openModal(); return false;" style="font-size:16px;padding:16px 36px;">Apply for early access</a>
   <p style="color:rgba(255,255,255,0.3);font-size:13px;margin-top:16px;">No credit card. No accountant required.</p>
 </section>
 
@@ -557,6 +557,81 @@
   <div class="footer-logo"><svg width="130" height="32" viewBox="0 0 200 48" xmlns="http://www.w3.org/2000/svg" style="display:block"><line x1="14" y1="8" x2="14" y2="40" stroke="#00A87A" stroke-width="5.5" stroke-linecap="round"/><line x1="30" y1="8" x2="30" y2="40" stroke="#00A87A" stroke-width="5.5" stroke-linecap="round"/><text x="52" y="33" font-family="DM Sans,system-ui,sans-serif" font-size="26" font-weight="600" fill="#FFFFFF" letter-spacing="-0.5px">Count<tspan fill="#00A87A">2</tspan></text></svg></div>
   <p>© 2026 Count2. Know your numbers. Always.</p>
 </footer>
+
+<!-- SIGNUP MODAL -->
+<div id="signup-modal" style="display:none; position:fixed; inset:0; z-index:1000; align-items:center; justify-content:center; padding:20px;">
+  <div id="modal-backdrop" onclick="closeModal()" style="position:absolute; inset:0; background:rgba(0,0,0,0.6); backdrop-filter:blur(4px);"></div>
+  <div style="position:relative; background:var(--white); border-radius:20px; padding:40px; max-width:440px; width:100%; box-shadow:0 24px 80px rgba(0,0,0,0.2);">
+    <button onclick="closeModal()" style="position:absolute; top:16px; right:16px; background:none; border:none; cursor:pointer; color:var(--ink3); font-size:20px; line-height:1;">✕</button>
+    <div style="margin-bottom:24px;">
+      <div style="font-family:'DM Mono',monospace; font-size:11px; color:var(--green); letter-spacing:0.1em; margin-bottom:10px;">BETA ACCESS</div>
+      <h3 style="font-family:'Instrument Serif',serif; font-size:28px; font-weight:400; line-height:1.2; margin-bottom:10px;">Know your numbers.<br><em>Starting today.</em></h3>
+      <p style="font-size:14px; color:var(--ink2); line-height:1.6;">We're onboarding a small group of early-stage founders. No credit card. No accountant required.</p>
+    </div>
+    <div id="modal-form">
+      <div style="margin-bottom:14px;">
+        <label style="display:block; font-size:13px; font-weight:500; margin-bottom:6px; color:var(--ink);">Name</label>
+        <input id="signup-name" type="text" placeholder="Your name" style="width:100%; padding:12px 14px; border:1px solid var(--border2); border-radius:10px; font-size:15px; font-family:'DM Sans',sans-serif; outline:none; transition:border-color 0.18s;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border2)'">
+      </div>
+      <div style="margin-bottom:20px;">
+        <label style="display:block; font-size:13px; font-weight:500; margin-bottom:6px; color:var(--ink);">Email</label>
+        <input id="signup-email" type="email" placeholder="you@company.com" style="width:100%; padding:12px 14px; border:1px solid var(--border2); border-radius:10px; font-size:15px; font-family:'DM Sans',sans-serif; outline:none; transition:border-color 0.18s;" onfocus="this.style.borderColor='var(--green)'" onblur="this.style.borderColor='var(--border2)'">
+      </div>
+      <div id="modal-error" style="display:none; color:#c0392b; font-size:13px; margin-bottom:12px;"></div>
+      <button onclick="submitSignup()" id="submit-btn" style="width:100%; background:var(--green); color:white; border:none; border-radius:10px; padding:14px; font-size:15px; font-weight:500; cursor:pointer; font-family:'DM Sans',sans-serif; transition:background 0.18s;">Get early access</button>
+    </div>
+    <div id="modal-success" style="display:none; text-align:center; padding:20px 0;">
+      <div style="font-size:40px; margin-bottom:12px;">🎉</div>
+      <h4 style="font-family:'Instrument Serif',serif; font-size:24px; font-weight:400; margin-bottom:8px;">You're on the list!</h4>
+      <p style="font-size:14px; color:var(--ink2);">We'll be in touch soon with your access link.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function openModal() {
+    const modal = document.getElementById('signup-modal');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => document.getElementById('signup-name').focus(), 100);
+  }
+  function closeModal() {
+    document.getElementById('signup-modal').style.display = 'none';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeModal();
+  });
+  async function submitSignup() {
+    const name = document.getElementById('signup-name').value.trim();
+    const email = document.getElementById('signup-email').value.trim();
+    const errorEl = document.getElementById('modal-error');
+    const btn = document.getElementById('submit-btn');
+    errorEl.style.display = 'none';
+    if (!name) { errorEl.textContent = 'Please enter your name.'; errorEl.style.display = 'block'; return; }
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errorEl.textContent = 'Please enter a valid email address.'; errorEl.style.display = 'block'; return; }
+    btn.textContent = 'Submitting…';
+    btn.disabled = true;
+    try {
+      const res = await fetch('https://formspree.io/f/xrejjjkp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, email })
+      });
+      if (res.ok) {
+        document.getElementById('modal-form').style.display = 'none';
+        document.getElementById('modal-success').style.display = 'block';
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch {
+      errorEl.textContent = 'Something went wrong. Please try again.';
+      errorEl.style.display = 'block';
+      btn.textContent = 'Get early access';
+      btn.disabled = false;
+    }
+  }
+</script>
 
 </body>
 </html>
